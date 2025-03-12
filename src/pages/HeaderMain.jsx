@@ -41,7 +41,7 @@ const HeaderMain = () => {
       <nav className="bg-gray-100">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="md:flex justify-center py-2">
-            <div className="flex  justify-center gap-4 md:space-x-8">
+            <div className="flex  justify-center gap-2 md:space-x-6">
               {[
                 { label: "Courses", links: ["Course 1", "Course 2", "Course 3"] },
                 { label: "Best University", links: ["University 1", "University 2", "University 3"] },

@@ -32,7 +32,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-            <button className="bg-blue-600 text-white p-2 rounded-full">
+            <button className="bg-gray-300 text-gray-600  p-2 rounded-full">
               <i className="fas fa-chevron-left"><FaChevronLeft></FaChevronLeft></i>
             </button>
           </div>

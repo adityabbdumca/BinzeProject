@@ -50,7 +50,7 @@ const SuccessStories = () => {
                 onClick={handlePrev}
                 className="bg-white/80 rounded-full p-2 hover:bg-white transition-colors shadow-lg"
               >
-                <FaChevronLeft className="text-gray-600 text-lg md:text-xl" />
+                <FaChevronLeft className="   text-gray-600 text-lg md:text-xl " />
               </button>
               <button 
                 onClick={handleNext}

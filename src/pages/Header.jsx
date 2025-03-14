@@ -8,7 +8,7 @@ import appStore from '../assets/image/image.png';
 
 const Header = () => {
   return (
-    <header className="relative bg-white shadow-sm w-full">
+    <header className="hidden sm:block relative bg-white shadow-sm w-full">
       {/* Top Banner */}
       <div className="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between">
         {/* Campaign Text */}

@@ -16,27 +16,43 @@ import SearchBar from './pages/SearchBar'
 import Navbar from './pages/Navbar'
 import Banner from './pages/Banner'
 import HeaderMain from './pages/HeaderMain'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Registration from './pages/Registation'
+import LogPage from './pages/LogPage'
 const App = () => {
-  return (
-    <div>
-      <Header></Header>
-      {/* <SearchBar></SearchBar>
-      <Navbar></Navbar> */}
-      <HeaderMain></HeaderMain>
-      <Banner></Banner>
-      <StatsSection></StatsSection>
-      <TrustedUniversities></TrustedUniversities>
-      <Courses></Courses>
-      <LearnAndEarn></LearnAndEarn>
-     <HirePartner></HirePartner>
-      <Mentor></Mentor>
-      <ExUniver></ExUniver>
-      <CarrerTran></CarrerTran>
-      <WeaningNews></WeaningNews>
-      <SuccessStories></SuccessStories>
-      <FreAskQuestion></FreAskQuestion>
-      <Footer></Footer>
-    </div>
+
+    return (
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <HeaderMain />
+          
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/registation" element={<Registration />} />
+              <Route path="/login" element={<LogPage></LogPage>} />
+              <Route path="/" element={
+                <>
+                  <Banner />
+                  <StatsSection />
+                  <TrustedUniversities />
+                  <Courses />
+                  <LearnAndEarn />
+                  <HirePartner />
+                  <Mentor />
+                  <ExUniver />
+                  <CarrerTran />
+                  <WeaningNews />
+                  <SuccessStories />
+                  <FreAskQuestion />
+                </>
+              } />
+            </Routes>
+          </main>
+  
+          <Footer />
+        </div>
+      </Router>
   )
 }
 

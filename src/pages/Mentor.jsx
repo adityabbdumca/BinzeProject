@@ -51,7 +51,7 @@ const Mentor = () => (
         ))}
       </div>
 
-      <div className="text-center mt-12">
+      <div className="hidden sm:block text-center mt-12">
         <button className="bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors">
           Suggest me a Mentor
         </button>

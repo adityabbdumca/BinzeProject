@@ -146,7 +146,7 @@ const HeaderMain = () => {
         {item.icon && (
           <img 
             src={item.icon}  
-            className=" w-6 h-6 mr-3 mt-1  bg-gray-100 rounded-lg"  // Added mt-1 for better icon alignment
+            className="w-[36.31px] h-[36.31px]  top-[167px] left-[35px] mr-5"  // Added mt-1 for better icon alignment
             
             alt="" 
             aria-hidden="true"
@@ -158,14 +158,14 @@ const HeaderMain = () => {
          
     <Link 
   to={item.path} 
-  className="font-mulish font-bold text-sm text-gray-800 hover:text-blue-600 transition-colors"
+  className=" w-[40px] h-[18px] top-[167px] left-[90px] font-mulish font-bold text-[14px] leading-[100%] tracking-[0px] text-gray-800 hover:text-blue-600 transition-colors "
   onClick={() => setMenuOpen(false)} // Add this line
 >
-  {item.label}
+  <div className='pt-3'>{item.label}</div>
 </Link>
           </span>
           {item.desc && (
-            <span className="font-mulish text-xs text-gray-500 mt-1 leading-tight">
+            <span className="font-mulish text-xs text-gray-500  leading-tight">
               {item.desc}
             </span>
           )}

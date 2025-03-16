@@ -52,7 +52,7 @@ const Banner = () => {
           src={mobileImages[currentIndex]} 
           alt="Mobile Banner" 
           
-          className="mobile-banner w-[360.33px] h-[149.19px]  left-[16px] bg-white"
+          className="mobile-banner "
         />
       )}
     </div>

@@ -34,7 +34,7 @@ const HeaderMain = () => {
   { label: "UG Courses", icon: icon3,desc:"After 12th",path:"/ugcorses" },
   { label: "Advanced Diploma", icon: icon4 ,desc:"After 10th & 12th",path:"/advanceddiploma"},
   { label: "Certifications", icon: icon5, desc:"Any qualification",path: '/certificat' },
-  { label: "Logout", icon: icon6,path: '/registation' }
+  { label: "Login", icon: icon6,path: '/registation' }
   ];
 
   useEffect(() => {

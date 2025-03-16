@@ -19,6 +19,7 @@ import HeaderMain from './pages/HeaderMain'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Registration from './pages/Registation'
 import LogPage from './pages/LogPage'
+import WeAreConsultig from './pages/WeAreConsultig'
 const App = () => {
 
     return (
@@ -39,6 +40,7 @@ const App = () => {
                   <Courses />
                   <LearnAndEarn />
                   <HirePartner />
+                  <WeAreConsultig></WeAreConsultig>
                   <Mentor />
                   <ExUniver />
                   <CarrerTran />

@@ -29,7 +29,6 @@ const SuccessStories = () => {
             <div className="flex transition-all duration-300" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
               {images.map((img, index) => (
                 <div key={index} className="min-w-full relative">
-                  {/* Image Container with Fixed Aspect Ratio */}
                   <div className="aspect-video w-full h-full">
                     <img
                       src={img}
@@ -44,19 +43,35 @@ const SuccessStories = () => {
               ))}
             </div>
 
-            {/* Navigation Buttons */}
-            <div className="flex justify-between items-center absolute inset-0 px-2">
+            {/* Mobile Navigation Buttons */}
+            <div className="md:hidden absolute inset-0">
               <button 
                 onClick={handlePrev}
-                className="bg-white/80 rounded-full p-2 hover:bg-white transition-colors shadow-lg"
+                className="absolute left-1 top-1/3 -translate-y-1/2 bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg z-10"
               >
-                <FaChevronLeft className="   text-gray-600 text-lg md:text-xl " />
+                <FaChevronLeft className="text-gray-600 text-xl" />
               </button>
               <button 
                 onClick={handleNext}
-                className="bg-white/80 rounded-full p-2 hover:bg-white transition-colors shadow-lg"
+                className="absolute right-1 top-1/3 -translate-y-1/2 bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg z-10"
               >
-                <FaChevronRight className="text-gray-600 text-lg md:text-xl" />
+                <FaChevronRight className="text-gray-600 text-xl" />
+              </button>
+            </div>
+
+            {/* Desktop Navigation Buttons */}
+            <div className="hidden md:flex justify-between items-center absolute inset-0 px-2">
+              <button 
+                onClick={handlePrev}
+                className="bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg"
+              >
+                <FaChevronLeft className="text-gray-600 text-2xl" />
+              </button>
+              <button 
+                onClick={handleNext}
+                className="bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg"
+              >
+                <FaChevronRight className="text-gray-600 text-2xl" />
               </button>
             </div>
           </div>
@@ -66,12 +81,14 @@ const SuccessStories = () => {
         <div className="flex justify-center mt-4">
           <div className="flex space-x-2">
             {images.map((_, index) => (
-              <span 
+              <button 
                 key={index}
+                onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
                 }`}
-              ></span>
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </div>
         </div>

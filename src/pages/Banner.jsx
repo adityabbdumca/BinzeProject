@@ -1,56 +1,61 @@
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import banner1 from "../assets/image/banner1.jpg";
+import banner2 from "../assets/image/banner2.jpg";
+import banner3 from "../assets/image/banner3.jpg";
+import banner4 from "../assets/image/banner4.jpg";
+
 const Banner = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Detect screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Reset index when switching between mobile/desktop
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [isMobile]);
+
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % 2);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const desktopImages = [banner1, banner2];
+  const mobileImages = [banner3, banner4];
+
   return (
-    <div className="bg-gray-100 s-screen flex justify-center items-center">
-      <div className="m-full max-w-6xl mx-auto">
-        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            <div className="bg-blue-600 text-white p-8 md:w-1/2 flex flex-col justify-center">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Boost Your Career with Industry-Recognized Skills
-              </h1>
-              <p className="text-lg mb-6">
-                Flexible, affordable courses designed to help you achieve your goals, whether you're at home, on the go, or anywhere in between.
-              </p>
-              <div className="flex space-x-4">
-                <button className="bg-white text-blue-600 font-semibold py-2 px-4 rounded-lg">
-                  Suggest Universities
-                </button>
-                <button className="bg-transparent border border-white text-white font-semibold py-2 px-4 rounded-lg">
-                  Browse All Courses
-                </button>
-              </div>
-            </div>
-            <div className="relative md:w-1/2 flex items-center justify-center p-0">
-              <img
-                src="https://storage.googleapis.com/a1aa/image/3Kd006AUoGTi4aEjCJYVQxipykG1Q3_IRutkpj2Eu3c.jpg"
-                alt="Graduation cap and a happy student with books and headphones"
-                className="w-full m-full object-cover"
-                width="300"
-                height="300"
-              />
-            </div>
-          </div>
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-            <button className="bg-gray-300 text-gray-600  p-2 rounded-full">
-              <i className="fas fa-chevron-left"><FaChevronLeft></FaChevronLeft></i>
-            </button>
-          </div>
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
-            <button className="bg-gray-300 text-gray-600 p-2 rounded-full">
-              <i className="fas fa-chevron-right"><FaChevronRight></FaChevronRight></i>
-            </button>
-          </div>
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <div className="flex space-x-2">
-              <span className="block w-2 h-2 bg-blue-600 rounded-full"></span>
-              <span className="block w-2 h-2 bg-gray-300 rounded-full"></span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="banner-container flex justify-center">
+      {/* Desktop/Laptop View */}
+      {!isMobile && (
+        <img 
+          src={desktopImages[currentIndex]} 
+          alt="Desktop Banner" 
+          className="desktop-banner"
+        />
+      )}
+      
+      {/* Mobile View */}
+      {isMobile && (
+        <img 
+          src={mobileImages[currentIndex]} 
+          alt="Mobile Banner" 
+          className="mobile-banner"
+        />
+      )}
     </div>
   );
 };
 
-export default Banner
+export default Banner;

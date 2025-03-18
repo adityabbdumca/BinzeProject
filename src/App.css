@@ -1,1 +1,12 @@
 /* Optional custom CSS for better mobile experience */
+.slick-prev:before, .slick-next:before {
+    color: white !important;
+  }
+  
+  .slick-dots li button:before {
+    color: white !important;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #3B82F6 !important;
+  }

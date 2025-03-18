@@ -20,6 +20,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Registration from './pages/Registation'
 import LogPage from './pages/LogPage'
 import WeAreConsultig from './pages/WeAreConsultig'
+import FooterNav from './pages/FooterNav'
 const App = () => {
 
     return (
@@ -51,7 +52,7 @@ const App = () => {
               } />
             </Routes>
           </main>
-  
+  <FooterNav></FooterNav>
           <Footer />
         </div>
       </Router>

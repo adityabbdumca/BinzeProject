@@ -26,7 +26,7 @@ const HirePartner = () => {
         </p>
 
         {/* Mobile: 1 column, Desktop: 6 columns */}
-        <div className="flex overflow-x-auto space-x-6 md:grid md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+        <div className="flex overflow-x-auto scrollbar-hide space-x-6 md:grid md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
   {partners.map((partner, index) => (
     <div 
       key={index}

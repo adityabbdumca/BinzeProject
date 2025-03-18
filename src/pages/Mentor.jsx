@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import metor1 from "../assets/image/metor1.png";
 import mentor2 from "../assets/image/mentor2.png";
 import mento3 from "../assets/image/mento3.png";
@@ -11,7 +12,7 @@ const mentors = [
 ];
 
 const MentorCard = ({ mentor }) => (
-  <div className="rounded-lg shadow-lg min-w-[250px] sm:min-w-0">
+  <div className="rounded-lg shadow-lg min-w-[250px] sm:min-w-0 transition-all duration-500">
     <div className="relative">
       <img
         src={mentor.image}
@@ -27,37 +28,47 @@ const MentorCard = ({ mentor }) => (
   </div>
 );
 
-const Mentor = () => (
-  <div className="bg-blue-50 min-m-screen py-12">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">Pick your Mentor</h1>
-        <p className="text-gray-500">
-          College Drishti has a team of expert counsellors ready to guide you through their experience of guiding 100s of students.
-        </p>
-      </div>
+const Mentor = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-      {/* Mobile: Horizontal Scroll */}
-      <div className="sm:hidden flex gap-4 overflow-x-auto pb-6">
-        {mentors.map((mentor, index) => (
-          <MentorCard key={index} mentor={mentor} />
-        ))}
-      </div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % mentors.length);
+    }, 3000); // Change every 3 seconds
 
-      {/* Tablet & Desktop: Grid Layout */}
-      <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {mentors.map((mentor, index) => (
-          <MentorCard key={index} mentor={mentor} />
-        ))}
-      </div>
+    return () => clearInterval(interval);
+  }, []);
 
-      <div className="hidden sm:block text-center mt-12">
-        <button className="bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors">
-          Suggest me a Mentor
-        </button>
+  return (
+    <div className="bg-blue-50 min-m-screen py-12">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-800">Pick your Mentor</h1>
+          <p className="text-gray-500">
+            College Drishti has a team of expert counsellors ready to guide you through their experience of guiding 100s of students.
+          </p>
+        </div>
+
+        {/* Mobile: Auto-Sliding Mentor Cards */}
+        <div className="sm:hidden flex justify-center items-center">
+          <MentorCard mentor={mentors[currentIndex]} />
+        </div>
+
+        {/* Tablet & Desktop: Grid Layout */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {mentors.map((mentor, index) => (
+            <MentorCard key={index} mentor={mentor} />
+          ))}
+        </div>
+
+        <div className="hidden sm:block text-center mt-12">
+          <button className="bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors">
+            Suggest me a Mentor
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Mentor;

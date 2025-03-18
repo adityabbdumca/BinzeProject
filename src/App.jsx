@@ -52,8 +52,9 @@ const App = () => {
               } />
             </Routes>
           </main>
-  <FooterNav></FooterNav>
+          <FooterNav></FooterNav>
           <Footer />
+         
         </div>
       </Router>
   )

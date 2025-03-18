@@ -13,10 +13,11 @@ const mentors = [
 
 const MentorCard = ({ mentor }) => (
   <div className="rounded-lg shadow-lg min-w-[250px] sm:min-w-0 transition-all duration-500">
-    <div className="relative">
+    {/* Added aspect-square for 1:1 ratio and fixed height for mobile */}
+    <div className="relative aspect-square h-[250px] sm:h-auto">
       <img
         src={mentor.image}
-        className="w-full h-auto object-cover"
+        className="w-full h-full object-cover" // Changed to h-full
         alt="Mentor"
       />
       <div className="absolute bottom-0 left-0 right-0 flex justify-center transform translate-y-3/4">
@@ -34,7 +35,7 @@ const Mentor = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % mentors.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -49,12 +50,12 @@ const Mentor = () => {
           </p>
         </div>
 
-        {/* Mobile: Auto-Sliding Mentor Cards */}
+        {/* Mobile: Fixed size cards with sliding */}
         <div className="sm:hidden flex justify-center items-center">
           <MentorCard mentor={mentors[currentIndex]} />
         </div>
 
-        {/* Tablet & Desktop: Grid Layout */}
+        {/* Desktop: Responsive grid */}
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {mentors.map((mentor, index) => (
             <MentorCard key={index} mentor={mentor} />

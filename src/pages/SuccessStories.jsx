@@ -44,20 +44,27 @@ const SuccessStories = () => {
             </div>
 
             {/* Mobile Navigation Buttons */}
-            <div className="md:hidden absolute inset-0">
-              <button 
-                onClick={handlePrev}
-                className="absolute left-1 top-1/3 -translate-y-1/2 bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg z-10"
-              >
-                <FaChevronLeft className="text-gray-600 text-xl" />
-              </button>
-              <button 
-                onClick={handleNext}
-                className="absolute right-1 top-1/3 -translate-y-1/2 bg-white/80 rounded-full p-3 hover:bg-white transition-colors shadow-lg z-10"
-              >
-                <FaChevronRight className="text-gray-600 text-xl" />
-              </button>
-            </div>
+            <div className="md:hidden flex justify-between items-center absolute inset-y-0 left-0 right-0 px-4">
+  <button 
+    onClick={handlePrev}
+    className="bg-white/80 hover:bg-white rounded-full p-2 shadow-xl transition-all duration-300 
+               hover:scale-105 active:scale-95 ring-1 ring-gray-200/50 hover:ring-gray-300
+               absolute left-1 top-1/3 mt-4 -translate-y-1/2 z-20"
+    aria-label="Previous"
+  >
+    <FaChevronLeft className="text-gray-700 text-lg" />
+  </button>
+  
+  <button 
+    onClick={handleNext}
+    className="bg-white/80 hover:bg-white rounded-full p-2 shadow-xl transition-all duration-300 
+               hover:scale-105 active:scale-95 ring-1 ring-gray-200/50 hover:ring-gray-300
+               absolute right-1 top-1/3 mt-4 -translate-y-1/2 z-20"
+    aria-label="Next"
+  >
+    <FaChevronRight className="text-gray-700 text-lg" />
+  </button>
+</div>
 
             {/* Desktop Navigation Buttons */}
             <div className="hidden md:flex justify-between items-center absolute inset-0 px-2">

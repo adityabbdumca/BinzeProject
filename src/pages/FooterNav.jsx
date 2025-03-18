@@ -7,7 +7,7 @@ import foternav5 from "../assets/image/foternav5.png";
 
 const FooterNav = () => {
   const Badge = ({ text }) => (
-    <div className="absolute top-0 right-0 -translate-y-1/2 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-md">
+    <div className="absolute -top-1 -right-2 bg-red-500 text-white text-[11px] px-1.5 py-0.5 rounded-full shadow-md font-medium transform translate-x-1/2">
       {text}
     </div>
   );
@@ -21,23 +21,36 @@ const FooterNav = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 md:hidden flex justify-around items-center bg-white py-4 shadow-xl border-t border-gray-200">
+    <div className="fixed bottom-0 left-0 right-0 md:hidden flex justify-between items-center bg-white pt-3 pb-4 px-6 shadow-2xl border-t border-gray-100 safe-area-bottom">
       {navItems.map((item, index) => (
         <button
           key={index}
-          className={`relative text-center focus:outline-none transition-all duration-300 transform ${item.isActive ? 'scale-110' : 'hover:scale-105'}`}
+          className={`relative flex flex-col items-center focus:outline-none group transition-all duration-200 ${
+            item.isActive ? 'text-blue-600' : 'text-gray-500 hover:text-gray-700'
+          }`}
+          aria-label={item.label}
         >
-          <div className="relative flex justify-center items-center p-2 bg-gray-100 rounded-full shadow-md">
-            <img
-              alt={`${item.label} icon`}
-              className="w-[33px] h-[30px]"
-              src={item.icon}
-            />
-            {item.badge && <Badge text={item.badge} />}
+          <div className="relative  p-2 rounded-2xl transition-all duration-200 
+            group-hover:bg-gray-50 group-active:scale-95">
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <img
+                alt=""
+                className="w-full h-full object-contain"
+                src={item.icon}
+              />
+              {item.badge && <Badge text={item.badge} />}
+            </div>
           </div>
-          <p className={`text-xs mt-1 font-medium ${item.isActive ? 'text-blue-600' : 'text-gray-600'}`}>
+          <span className={`text-[10px] font-semibold tracking-wide transition-colors ${
+            item.isActive ? 'text-blue-600' : 'text-gray-600 group-hover:text-gray-800'
+          }`}>
             {item.label}
-          </p>
+          </span>
+          
+          {/* Active state indicator */}
+          {item.isActive && (
+            <div className="absolute top-0 w-1.5 h-1.5 bg-blue-600 rounded-full -translate-y-[3px]" />
+          )}
         </button>
       ))}
     </div>

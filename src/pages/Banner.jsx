@@ -1,60 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import banner1 from "../assets/image/banner1.jpg";
-import banner2 from "../assets/image/banner2.jpg";
-import banner3 from "../assets/image/banner3.jpg";
-import banner4 from "../assets/image/banner4.jpg";
+import React from 'react';
+import secondBanerMobile from "../assets/image/secondBanerMobile.png";
+import tabScreenBaner from "../assets/image/tabScreenBaner.png";
+import descBaneerImage from "../assets/image/descBaneerImage.png";
 
 const Banner = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Detect screen size changes
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Reset index when switching between mobile/desktop
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [isMobile]);
-
-  // Auto-rotate images every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % 2);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const desktopImages = [banner1, banner2];
-  const mobileImages = [banner3, banner4];
-
   return (
-    <div className="banner-container flex justify-center">
-      {/* Desktop/Laptop View */}
-      {!isMobile && (
-        <img 
-          src={desktopImages[currentIndex]} 
-          alt="Desktop Banner" 
-          className="desktop-banner"
-        />
-      )}
+    <div className="flex justify-center pt-2"> {/* Set minimum height for desktop banner */}
+      {/* Mobile Banner */}
+      <img
+        src={secondBanerMobile}
+        alt="Mobile Banner"
+        className="md:hidden  w-[360.33px] h-[149.19px] top-[127.81px]"
+      />
       
-      {/* Mobile View */}
-      {isMobile && (
-        <img 
-          src={mobileImages[currentIndex]} 
-          alt="Mobile Banner" 
-          
-          className="mobile-banner "
-        />
-      )}
+      {/* Tablet Banner */}
+      <img
+        src={tabScreenBaner}
+        alt="Tablet Banner"
+        className="hidden md:block lg:hidden  w-[694.02px] h-[244.61px] top-[121px] "
+      />
+      
+      {/* Desktop Banner */}
+      <img
+        src={descBaneerImage}
+        alt="Desktop Banner"
+        className="hidden lg:block  w-[1203px] h-[424px] top-[176px]"
+      />
     </div>
   );
 };

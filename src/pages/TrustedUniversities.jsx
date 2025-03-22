@@ -25,7 +25,7 @@ const TrustedUniversities = () => {
       {/* Mobile Layout */}
       <div className="md:hidden">
         <div className="flex flex-col items-center px-4">
-          <h1 className="text-2xl font-semibold mb-10 text-center  font-poppins">
+          <h1 className="text-2xl font-semibold mb-10 text-center font-poppins">
             100+ Trusted Universities
           </h1>
           <div className="grid grid-cols-3 sm:grid-cols-1 gap-4">
@@ -50,9 +50,11 @@ const TrustedUniversities = () => {
       {/* Desktop/Tablet Layout */}
       <div className="hidden md:block container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/3 mb-8 md:mb-0">
-            <h1 className="text-2xl md:text-3xl font-semibold text-center md:text-left  font-poppins">
-              100+ Trusted Universities
+          <div className="md:w-1/3 mb-8 md:mb-0 max-w-[424px] h-[118px]">
+            <h1 className="text-[32px] lg:pl-20 leading-[48px] font-semibold text-left font-poppins 
+              tracking-[-0.96px]">
+              <span className="block">100+ Trusted</span>
+              <span className="block">Universities</span>
             </h1>
           </div>
           <div className="md:w-2/3 w-full grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -60,12 +62,12 @@ const TrustedUniversities = () => {
               <div 
                 key={index}
                 className="flex items-center justify-center p-4 bg-white 
-                rounded-lg shadow-md"
+                rounded-lg shadow-md hover:shadow-lg transition-shadow"
               >
                 <img 
                   alt={university.alt} 
                   src={university.src} 
-                  className="h-12 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                   loading="lazy"
                 />
               </div>

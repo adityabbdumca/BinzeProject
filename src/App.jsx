@@ -21,6 +21,7 @@ import Registration from './pages/Registation'
 import LogPage from './pages/LogPage'
 import WeAreConsultig from './pages/WeAreConsultig'
 import FooterNav from './pages/FooterNav'
+import Course2 from './pages/Course2'
 const App = () => {
 
     return (
@@ -31,14 +32,18 @@ const App = () => {
           
           <main className="flex-grow">
             <Routes>
+              //header routing
               <Route path="/registation" element={<Registration />} />
               <Route path="/login" element={<LogPage></LogPage>} />
+              <Route path="/university1" element={<Course2></Course2>} />
+              <Route path="/course" element={<Courses></Courses>} />
               <Route path="/" element={
                 <>
-                  <Banner />
-                  <StatsSection />
-                  <TrustedUniversities />
-                  <Courses />
+                  <Banner/>
+                  <StatsSection/>
+                  <TrustedUniversities/>
+                  <Courses/>
+                
                   <LearnAndEarn />
                   <HirePartner />
                   <WeAreConsultig></WeAreConsultig>

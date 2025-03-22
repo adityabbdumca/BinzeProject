@@ -1,75 +1,62 @@
-import { useState, useEffect } from "react";
-import metor1 from "../assets/image/metor1.png";
-import mentor2 from "../assets/image/mentor2.png";
-import mento3 from "../assets/image/mento3.png";
-import mentor4 from "../assets/image/mentor4.png";
-
-const mentors = [
-  { image: metor1 },
-  { image: mentor2 },
-  { image: mento3 },
-  { image: mentor4 },
-];
-
-const MentorCard = ({ mentor }) => (
-  <div className="rounded-lg shadow-lg min-w-[250px] sm:min-w-0 transition-all duration-500">
-    {/* Added aspect-square for 1:1 ratio and fixed height for mobile */}
-    <div className="relative aspect-square h-[250px] sm:h-auto">
-      <img
-        src={mentor.image}
-        className="w-full h-full object-cover" // Changed to h-full
-        alt="Mentor"
-      />
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center transform translate-y-3/4">
-        <button className="bg-blue-50 text-blue-400 text-sm font-semibold px-6 py-2 rounded-full border-2 border-blue-400 hover:bg-blue-100 transition-colors shadow-md">
-          Consult Now
-        </button>
-      </div>
-    </div>
-  </div>
-);
-
+import React from 'react';
+import mento1 from "../assets/image/mento1.png";
+import mento2 from "../assets/image/mento2.png";
+import mobilMentor from "../assets/image/mobilMentor.png"
+import rightButtonMentor from "../assets/image/rightButtonMentor.png"
+import leftButtonMentor from "../assets/image/leftButtonMentor.png"
 const Mentor = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % mentors.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="bg-blue-50 min-m-screen py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">Pick your Mentor</h1>
-          <p className="text-gray-500">
-            College Drishti has a team of expert counsellors ready to guide you through their experience of guiding 100s of students.
-          </p>
-        </div>
+    <div className='bg-[#F3F7FF]'>
+      {/* Desktop-only image (lg breakpoint and above) */}
+      <img 
+        src={mento1} 
+        alt="Desktop mentor"
+        className="hidden lg:block pl-" 
+      />
+      
+      {/* Tablet-only image (md to lg breakpoint) */}
+      <img 
+        src={mento2} 
+        alt="Tablet mentor"
+        className="hidden md:block lg:hidden" 
+      />
+      {/* // mobile screen */}
 
-        {/* Mobile: Fixed size cards with sliding */}
-        <div className="sm:hidden flex justify-center items-center">
-          <MentorCard mentor={mentors[currentIndex]} />
-        </div>
-
-        {/* Desktop: Responsive grid */}
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mentors.map((mentor, index) => (
-            <MentorCard key={index} mentor={mentor} />
-          ))}
-        </div>
-
-        <div className="hidden sm:block text-center mt-12">
-          <button className="bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition-colors">
-            Suggest me a Mentor
-          </button>
-        </div>
-      </div>
+      <div className='md:hidden w-[300px] h-[472px] bg-[#F3F7FF] p-4 mx-auto'>
+  <div className='flex justify-center items-center w-full h-[44px] mb-4'>  
+    <p className='font-poppins font-semibold text-[18px]'>Pick your Mentor</p>
+  </div>
+  <div className='w-full h-[28px] mb-6'> 
+    <p className='font-poppins font-normal text-[8px] leading-[14px] text-center'>
+      College Drishti has a team of expert counsellors ready to guide you through their experience of guiding 100s of students
+    </p>
+  </div>
+  <div className='flex  '>
+  <div className=''>
+  <img 
+    src={rightButtonMentor} 
+    alt="Navigation button" 
+    className='w-full h-full object-contain'
+  />
+</div>
+  <img 
+    src={mobilMentor} 
+    alt="Mentors" 
+    className='w-full h-[318px] object-contain'
+  />
+   <div className=''>
+  <img 
+    src={leftButtonMentor} 
+    alt="Navigation button" 
+    className='w-full h-full object-contain'
+  />
+</div>
+  </div>
+</div>
+      
+     
     </div>
-  );
-};
+  )
+}
 
 export default Mentor;

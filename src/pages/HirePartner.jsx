@@ -16,33 +16,59 @@ const HirePartner = () => {
   ];
 
   return (
-    <div className="bg-white py-10 md:py-14 w-full">
+    <div className="bg-white py-10 md:py-14 m-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-          Hiring Partners
-        </h2>
-        <p className="text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto text-base md:text-lg">
-          Unlock the doors of success with the leading companies of the industry.
-        </p>
+      <h2 
+  className="w-full max-w-[432px] h-10 font-poppins font-semibold text-[16px] md:text-[32px] leading-10 text-[#3D3D3D] mx-auto mb-4 text-center"
+>
+  Hiring Partners
+</h2>
 
-        {/* Mobile: 1 column, Desktop: 6 columns */}
-        <div className="flex overflow-x-auto scrollbar-hide space-x-6 md:grid md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
-  {partners.map((partner, index) => (
-    <div 
-      key={index}
-      className="flex-shrink-0 flex items-center justify-center p-2 md:p-4 transition-transform duration-300 hover:scale-105"
-    >
-      <img
-        src={partner.image}
-        alt={partner.alt}
-        className="h-12 md:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
-        loading="lazy"
-        style={{ maxWidth: '160px' }}
-      />
-    </div>
-  ))}
-</div>
+       {/* Mobile Screen (322px) */}
+<p className="md:hidden font-poppins font-normal text-[10px] leading-[17px] w-[322px] h-[34px] text-center mx-auto text-[#667085]">
+  Unlock the doors of success with the leading companies of the industry.
+</p>
 
+{/* Desktop Screen (656px) - Hidden on mobile/tablet */}
+<p className="hidden md:block xl:hidden font-poppins font-normal text-[18px] leading-[24px] w-[656px] h-[24px] text-center mx-auto text-[#667085]">
+  Unlock the doors of success with the leading companies of the industry.
+</p>
+
+{/* Tablet Screen (12px) - Hidden on mobile/desktop */}
+<p className="hidden xl:block font-poppins pt-4 mb-7 font-normal text-[12px] w-full text-center mx-auto text-[#667085]">
+  Unlock the doors of success with the leading companies of the industry.
+</p>
+
+        {/* Mobile: Horizontal scroll with 4 visible cards */}
+        {/* Tablet/Desktop: 6-column grid */}
+        <div className="flex overflow-x-auto space-x-6 md:grid md:grid-cols-6 md:gap-8 md:space-x-0 scrollbar-hide">
+          {partners.map((partner, index) => (
+            <div 
+              key={index}
+              className="flex-shrink-0 flex items-center justify-center
+                         w-[111px] h-[37px]    /* Mobile */
+                         md:w-full md:h-[34px] md:pt-4 /* Tablet */
+                         lg:h-[51px]           /* Desktop */
+                         transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={partner.image}
+                alt={partner.alt}
+                className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+                loading="lazy"
+                style={{
+                  maxWidth: '153px', // Desktop max-width
+                  '@media (min-width: 768px)': { 
+                    maxWidth: '102px' // Tablet max-width
+                  },
+                  '@media (max-width: 767px)': { 
+                    maxWidth: '111px' // Mobile max-width
+                  }
+                }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

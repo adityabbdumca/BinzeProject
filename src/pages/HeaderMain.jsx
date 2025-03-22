@@ -21,12 +21,42 @@ const HeaderMain = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  
   const navItems = [
-    { label: "Courses", links: ["Course 1", "Course 2", "Course 3"] },
-    { label: "Best University", links: ["University 1", "University 2", "University 3"] },
-    { label: "Area of Interest", links: ["Interest 1", "Interest 2", "Interest 3"] },
-    { label: "More", links: ["More 1", "More 2", "More 3"] },
+    { 
+      label: "Courses", 
+      path: "/course2", 
+      links: [
+        { title: "Course 1", path: "/course" },
+        { title: "Course 2", path: "/course" },
+      ] 
+    },
+    { 
+      label: "Best University", 
+      links: [
+        { title: "University 1", path: "/university1" },
+        { title: "University 2", path: "/university2" },
+        { title: "University 3", path: "/university3" },
+      ] 
+    },
+    { 
+      label: "Area of Interest", 
+      links: [
+        { title: "Interest 1", path: "/interest1" },
+        { title: "Interest 2", path: "/interest2" },
+        { title: "Interest 3", path: "/interest3" },
+      ] 
+    },
+    { 
+      label: "More", 
+      links: [
+        { title: "More 1", path: "/more1" },
+        { title: "More 2", path: "/more2" },
+        { title: "More 3", path: "/more3" },
+      ] 
+    },
   ];
+  
 
   const mobileMenuItems = [
   { label: "Home", icon: icon1,path: '/' },
@@ -64,20 +94,29 @@ const HeaderMain = () => {
 
         {/* Right Section */}
         <div className="md:flex items-center space-x-4 w-full md:w-auto">
-          <NavItem label="Learn & Earn" imgSrc={header2} />
-          <NavItem label="Find my Uni" imgSrc={header3} />
-         
-          <Link to="/registation">
-  <button className="bg-blue-600 text-white rounded-full py-2 px-4">
-    Login
-  </button>
-</Link>
-        </div>
+  <NavItem 
+    label="Learn & Earn" 
+    imgSrc={header2} 
+    className="flex flex-col items-center space-y-2"
+  />
+  <NavItem 
+    label="Find my Uni" 
+    imgSrc={header3} 
+    className="flex flex-col items-center space-y-2"
+  />
+  <Link to="/registation">
+    <button className="bg-blue-600 text-white rounded-full py-2 px-4">
+      Login
+    </button>
+  </Link>
+</div>
+
+
       </header>
 
   {/* Mobile Header */}
  
-<div className="sm:hidden flex items-center justify-between p-4 border-b">
+<div className="sm:hidden flex items-center justify-between bg-[#FFFFFF] p-4 border-b">
   {/* Hamburger/Close Button */}
   <button 
     className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-200 z-50"
@@ -197,23 +236,37 @@ const HeaderMain = () => {
 )}
 
       {/* Navigation Menu (Desktop) */}
-      <nav className="bg-gray-100 hidden sm:block">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <div className="flex justify-center py-2">
-            <div className="flex justify-center gap-2 md:space-x-6">
-              {navItems.map((item, index) => (
-                <Dropdown 
-                  key={index}
-                  label={item.label}
-                  links={item.links}
-                  isActive={activeDropdown === index}
-                  onToggle={() => setActiveDropdown(activeDropdown === index ? null : index)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <nav className="bg-[#F6F6F6] hidden md:block mx-auto
+  md:min-w-[768px] md:max-w-[831px] md:h-[23px] font-poppins /* Tablet */
+  xl:max-w-[1440px] xl:h-[40px]                  /* Desktop */
+  rounded-lg shadow-sm transition-all duration-300">
+
+  <div className="flex items-center justify-between h-full px-4
+    md:px-6 xl:px-8"> {/* Responsive horizontal padding */}
+    
+    <div className="flex flex-1 justify-center"> {/* Centered nav items */}
+      <div className="flex items-center font-poppins
+        md:gap-4 xl:gap-8         /* Responsive spacing */
+        md:text-sm xl:text-base"> {/* Responsive text sizing */}
+        
+        {navItems.map((item, index) => (
+          <Dropdown
+            key={index}
+            label={item.label}
+            links={item.links}
+            isActive={activeDropdown === index}
+            onToggle={() => setActiveDropdown(activeDropdown === index ? null : index)}
+            className="relative px-3 py-2.5      /* Better touch targets */
+              hover:bg-gray-100 rounded-lg      /* Hover states */
+              transition-colors duration-200"   /* Smooth transitions */
+          />
+        ))}
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
     </div>
   );
 };
@@ -241,11 +294,11 @@ const Dropdown = ({ label, links, isActive, onToggle }) => {
           {links.map((link, idx) => (
             <a 
               key={idx} 
-              href="#" 
+              href={link.path} 
               className="block px-4 py-2 hover:bg-gray-100 text-sm md:text-base"
               onClick={(e) => e.stopPropagation()}
             >
-              {link}
+              {link.title}
             </a>
           ))}
         </div>

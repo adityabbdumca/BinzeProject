@@ -2,8 +2,8 @@ import React from "react";
 
 const NewCard = ({ imageSrc, altText, title, date, description, titleColor }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300">
-      <img src={imageSrc} alt={altText} className="w-full h-48 object-cover rounded-t-lg" />
+    <div className="bg-white rounded-xl shadow-lg  transform hover:scale-105 transition duration-300">
+      <img src={imageSrc} alt={altText} className="" />
       <div className="p-4">
         <h2 className={`text-2xl font-semibold ${titleColor}`}>{title}</h2>
         <p className="text-gray-500 text-sm mt-1">{date}</p>

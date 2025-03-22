@@ -29,8 +29,16 @@ const ExUniver = () => {
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center min-m-screen py-[2%]">
       <div className="text-center my-8">
-        <h1 className="text-2xl font-semibold">Explore Universities</h1>
-      </div>
+  {/* Mobile Version */}
+  <h1 className="sm:hidden mx-auto w-[222px] h-[59px] font-inter font-semibold text-[18px] leading-[59px] text-[#2F2F2F]">
+    100+ trusted Universities
+  </h1>
+
+  {/* Desktop/Tablet Version */}
+  <h1 className="hidden sm:block mx-auto w-[432px] h-[40px] font-poppins font-semibold text-[32px] leading-[40px] text-[#2F2F2F] md:text-[24px]">
+    Explore Universities
+  </h1>
+</div>
 
       {/* Grid Layout */}
       <div className="grid grid-cols-3 md:grid-cols-6 gap-4 px-4">
@@ -51,7 +59,7 @@ const ExUniver = () => {
         <div className="my-8">
           <button
             onClick={() => setShowAll(true)}
-            className="bg-blue-600 text-white py-2 px-6 rounded-full"
+            className="bg-[#0056D2] text-white py-2 px-6 rounded-full"
           >
             View All
           </button>

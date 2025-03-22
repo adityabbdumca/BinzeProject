@@ -57,7 +57,7 @@ const CarrerTran = () => {
 
   return (
     <div className="bg-gray-900 text-white">
-      <div className="container mx-auto py-12 px-4 lg:px-8">
+      <div className="container mx-auto py-12 px-1 lg:px-1">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
           1 Lakh+ Career Transformations
         </h1>

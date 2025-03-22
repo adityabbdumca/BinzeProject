@@ -88,37 +88,58 @@ const Courses = () => {
   const displayedCourses = showAll ? filteredCourses : filteredCourses.slice(0, displayCount);
 
   return (
-    <div className="bg-white text-gray-800 py-[2%]">
+    <div className="bg-white text-gray-800 py-[2%]  pl-[3%] pr-[3%] ">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="font-poppins text-3xl font-bold text-center mb-2">Courses</h1>
-        <p className="font-poppins text-center text-gray-500 mb-8">
-          In-demand courses across multiple domains. Top-rated courses in diverse areas.
-        </p>
+      <div className="flex justify-center">
+  <h1 className="w-[579px] h-[40px] font-poppins font-extrabold text-[28px] leading-[40px] text-center">
+    Courses
+  </h1>
+</div>
+{/* Mobile version */}
+<div className="flex justify-center items-center md:hidden">
+  <p className="w-[335px] text-[#6D6D6D] font-poppins font-medium text-[8px] leading-[24px] tracking-normal ">
+    In-demand courses across multiple domains. Top-rated courses in diverse.
+  </p>
+</div>
+
+{/* Tablet/Desktop version */}
+<div className="hidden md:flex justify-center ">
+  <p className="w-[735px] h-[24px] text-[#6D6D6D] font-poppins font-medium text-[18px] leading-[24px] tracking-normal">
+    In-demand courses across multiple domains. Top-rated courses in diverse.
+  </p>
+</div>
+
 
         {/* Enhanced Filter Buttons */}
-        <div className="overflow-x-auto pb-4 scrollbar-hide">
-          <div className="flex space-x-4 min-w-max px-2">
-            {categories.map(category => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
-                  selectedCategory === category
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-                onClick={() => {
-                  setSelectedCategory(category);
-                  setShowAll(false);
-                }}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div className="overflow-x-auto mt-3 pb-6 scrollbar-hide">
+  <div className="flex space-x-4 min-w-max px-2  ">
+    <div className="border-b-2">
+    {categories.map(category => (
+      <button
+        key={category}
+        className={`px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap border-b-2
+          ${
+            selectedCategory === category
+              ? "text-[#0056D2] border-[#0056D2]"  // Active state: Text and small border of the same color
+              : "text-gray-600 border-transparent hover:border-gray-400"  // Inactive state: Only bottom border
+          }`}
+        onClick={() => {
+          setSelectedCategory(category);
+          setShowAll(false);
+        }}
+      >
+        {category}
+        
+      </button>
+    ))}
+  </div>
+  </div>
+</div>
+
+
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4 ">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4 pl-[3%] pr-[3%] ">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course) => (
               <CourseCard key={course.id} {...course} />

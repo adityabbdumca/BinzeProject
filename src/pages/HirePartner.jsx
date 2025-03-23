@@ -1,3 +1,6 @@
+import { default as Slider } from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import prt1 from '../assets/image/prt1.png';
 import prt2 from '../assets/image/prt2.png';
 import prt3 from '../assets/image/prt3.png';
@@ -15,56 +18,78 @@ const HirePartner = () => {
     { image: prt6, alt: 'Oracle logo' },
   ];
 
+  const sliderSettings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+          speed: 4000,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          speed: 5000,
+        }
+      }
+    ]
+  };
+
   return (
-    <div className="bg-white py-10 md:py-14 m-full">
+    <div className="bg-white py-10 md:py-14 w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 
-  className="w-full max-w-[432px] h-10 font-poppins font-semibold text-[16px] md:text-[32px] leading-10 text-[#3D3D3D] mx-auto mb-4 text-center"
->
-  Hiring Partners
-</h2>
+        <h2 className="font-poppins font-semibold text-[16px] md:text-[32px] leading-10 text-[#3D3D3D] mb-4 md:mb-6">
+          Hiring Partners
+        </h2>
 
-       {/* Mobile Screen (322px) */}
-<p className="md:hidden font-poppins font-normal text-[10px] leading-[17px] w-[322px] h-[34px] text-center mx-auto text-[#667085]">
-  Unlock the doors of success with the leading companies of the industry.
-</p>
+        <p className="font-poppins font-normal mx-auto text-[#667085] 
+          text-[10px] leading-[17px] w-[322px] h-[34px] 
+          md:text-[18px] md:leading-[24px] md:w-[656px] md:h-[24px]
+          xl:text-[12px] xl:pt-4 xl:mb-7">
+          Unlock the doors of success with the leading companies of the industry.
+        </p>
 
-{/* Desktop Screen (656px) - Hidden on mobile/tablet */}
-<p className="hidden md:block xl:hidden font-poppins font-normal text-[18px] leading-[24px] w-[656px] h-[24px] text-center mx-auto text-[#667085]">
-  Unlock the doors of success with the leading companies of the industry.
-</p>
+        {/* Mobile & Tablet Carousel */}
+        <div className="md:hidden px-4">
+          <Slider {...sliderSettings}>
+            {partners.map((partner, index) => (
+              <div key={index} className="px-2">
+                <div className="flex items-center justify-center h-[37px] md:h-[34px] transition-transform duration-300 hover:scale-105">
+                  <img
+                    src={partner.image}
+                    alt={partner.alt}
+                    className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 w-full max-w-[111px]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
 
-{/* Tablet Screen (12px) - Hidden on mobile/desktop */}
-<p className="hidden xl:block font-poppins pt-4 mb-7 font-normal text-[12px] w-full text-center mx-auto text-[#667085]">
-  Unlock the doors of success with the leading companies of the industry.
-</p>
-
-        {/* Mobile: Horizontal scroll with 4 visible cards */}
-        {/* Tablet/Desktop: 6-column grid */}
-        <div className="flex overflow-x-auto space-x-6 md:grid md:grid-cols-6 md:gap-8 md:space-x-0 scrollbar-hide">
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-6 gap-8 mt-8">
           {partners.map((partner, index) => (
             <div 
               key={index}
-              className="flex-shrink-0 flex items-center justify-center
-                         w-[111px] h-[37px]    /* Mobile */
-                         md:w-full md:h-[34px] md:pt-4 /* Tablet */
-                         lg:h-[51px]           /* Desktop */
-                         transition-transform duration-300 hover:scale-105"
+              className="flex items-center justify-center h-[34px] lg:h-[51px] transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={partner.image}
                 alt={partner.alt}
-                className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 w-full max-w-[153px]"
                 loading="lazy"
-                style={{
-                  maxWidth: '153px', // Desktop max-width
-                  '@media (min-width: 768px)': { 
-                    maxWidth: '102px' // Tablet max-width
-                  },
-                  '@media (max-width: 767px)': { 
-                    maxWidth: '111px' // Mobile max-width
-                  }
-                }}
               />
             </div>
           ))}

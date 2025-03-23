@@ -38,12 +38,12 @@ return (
         </div>
 
         {/* Mobile View */}
-        <div className="block md:hidden relative -mt-24 z-10"> {/* -mt-24 (96px) से और ऊपर */}
+        <div className="block md:hidden relative -mt-24 "> {/* -mt-24 (96px) से और ऊपर */}
   <div className="w-full overflow-hidden">
     <img 
       src={winNewsMobile} 
       alt="हमारी मीडिया कवरेज"
-      className="w-screen h-auto object-cover scale-105 transform transition-transform -translate-y-4" /* और 16px ऊपर */
+      className="w-screen h-auto object-cover " /* और 16px ऊपर */
     />
   </div>
 </div>

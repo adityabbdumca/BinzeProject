@@ -18,18 +18,31 @@ import course12 from "../assets/image/course12.png";
 const courses = [
   { id: 1, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
   
-  { id: 2, duration: "2 Years", title: "2 Year MBA", imgSrc: course2, category: "PG" },
-  { id: 3, duration: "2 Years", title: "1 Year MBA", imgSrc: course3, category: "PG" },
+  { id: 2, duration: "2 Years", title: "MBA", imgSrc: course2, category: "PG" },
+  { id: 3, duration: "2 Years", title: "MBA", imgSrc: course3, category: "PG" },
 
-  { id: 4, duration: "2 Years", title: "MS Degree", imgSrc: course4, category: "PG" },
+  { id: 4, duration: "2 Years", title: "MS", imgSrc: course4, category: "PG" },
   { id: 5, duration: "3 Years", title: "BBA", imgSrc: course5, category: "UG" },
   { id: 6, duration: "3 Years", title: "BCA", imgSrc: course6, category: "UG" },
   { id: 7, duration: "3 Years", title: "B.Tech", imgSrc: course7, category: "UG" },
   { id: 8, duration: "3 Years", title: "BA", imgSrc: course5, category: "UG" },
   { id: 9, duration: "3 Years", title: "BALLB", imgSrc: course6, category: "UG" },
   { id: 10, duration: "3 Years", title: "BSC", imgSrc: course7, category: "UG" },
-  { id: 11, duration: "2 Years", title: "Distance MCA", imgSrc: course8, category: "PG" },
+  { id: 11, duration: "2 Years", title: "MCA", imgSrc: course8, category: "PG" },
   { id: 12, duration: "3 Years", title: "B.Com", imgSrc: course9, category: "UG" },
+  { id: 13, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 14, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 15, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 16, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 17, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 18, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 19, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 20, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 21, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 22, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 23, duration: "3 Years", title: "BCA", imgSrc: course6, category: "UG" },
+  { id: 24, duration: "3 Years", title: "BCA", imgSrc: course6, category: "UG" },
+  
 
   // ... keep other course entries as they are
 ];
@@ -61,17 +74,26 @@ CourseCard.propTypes = {
 const Courses = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
-  const [displayCount, setDisplayCount] = useState(10);
+  const [displayCount, setDisplayCount] = useState(21);
   const categories = ["All", "PG Course", "UG Course", "Advanced Diploma", "Diploma"];
 // ... keep useEffect resize handler
-  useEffect(() => {
+useEffect(() => {
     const handleResize = () => {
-      setDisplayCount(window.innerWidth < 640 ? 6 : 10);
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) { // Mobile
+        setDisplayCount(6);
+      } else if (screenWidth >= 640 && screenWidth < 1024) { // Tablet
+        setDisplayCount(10);
+      } else { // Desktop
+        setDisplayCount(21);
+      }
     };
+    
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
 
   const filteredCourses = courses.filter(course => {
     if (selectedCategory === "All") return true;
@@ -111,13 +133,13 @@ const Courses = () => {
 
 
         {/* Enhanced Filter Buttons */}
-        <div className="overflow-x-auto mt-3 pb-6 scrollbar-hide">
-  <div className="flex space-x-4 min-w-max px-2  ">
-    <div className="border-b-2">
+        <div className="overflow-x-auto lg:mt-7 pb-6 scrollbar-hide">
+  <div className="flex space-x-4 min-w-max px-2 lg:ml-10">
+    <div className="border-b-2 ">
     {categories.map(category => (
       <button
         key={category}
-        className={`px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap border-b-2
+        className={`px-2 py-1 text-sm font-medium transition-colors whitespace-nowrap border-b-2
           ${
             selectedCategory === category
               ? "text-[#0056D2] border-[#0056D2]"  // Active state: Text and small border of the same color

@@ -12,7 +12,7 @@ const SuccessStories = () => {
   <img 
     src={suceDesk} 
     alt="Desktop success stories"
-    className="w-full h-full object-cover" 
+    className="w-[1640px] h-[744px] object-cover" 
   />
 </div>
 
@@ -21,7 +21,7 @@ const SuccessStories = () => {
         <img 
           src={successStoryTab} 
           alt="Success stories tablet version"
-          className="mx-auto w-full max-w-3xl object-cover"
+          className="mx-auto w-[1033px] h-[422px]  object-cover"
         />
       </div>
 

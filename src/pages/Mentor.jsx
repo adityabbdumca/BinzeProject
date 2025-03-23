@@ -11,7 +11,7 @@ const Mentor = () => {
       <img 
         src={mento1} 
         alt="Desktop mentor"
-        className="hidden lg:block pl-" 
+        className="hidden lg:block lg:pl-6" 
       />
       
       {/* Tablet-only image (md to lg breakpoint) */}

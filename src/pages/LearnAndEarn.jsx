@@ -1,27 +1,42 @@
-import learnEearn1 from '../assets/image/learnEearn1.png'
+import learnEearn1 from '../assets/image/learnEearn1.png';
+
 const LearnAndEarn = () => {
-    return (
-      <div className="bg-[#0B1120] text-white min-m-screen flex flex-col md:flex-row items-center justify-center  py-12">
-        <div className="flex-1 flex justify-center">
+  return (
+    <div className="w-full bg-[#0B1120] text-white font-poppins">
+      <div className="mx-auto flex flex-col items-center justify-center 
+        min-h-[542px] w-full max-w-[500px]
+        md:max-w-[870px] md:min-h-[285px] md:flex-row
+        lg:max-w-none lg:min-h-[602px] lg:px-16 xl:px-24">
+
+        {/* Image Container */}
+        <div className="flex-1 lg:flex-1 flex justify-center p-4 lg:p-8">
           <img
             src={learnEearn1}
             alt="Hand placing a coin on a stack of books with graduation caps and coins around"
-            className="max-w-full h-auto"
-            width="400"
-            height="300"
+            className="w-full max-w-[300px] md:max-w-[350px] lg:max-w-[500px] h-auto"
           />
         </div>
-        <div className="flex-1 text-center md:text-left mt-8 md:mt-0 md:ml-8">
-          <h1 className="text-3xl font-bold mb-4">Learn &amp; Earn</h1>
-          <p className="text-lg mb-2">Curious About It?</p>
-          <p className="text-lg mb-2">Don’t worry! Fill out this form</p>
-          <p className="text-lg mb-4">And unlock all the answers you’ve</p>
-          <p className="text-lg mb-4">been waiting for.</p>
-          <a href="#" className="inline-block bg-blue-600 text-white py-2 px-4 rounded-full text-lg">
+
+        {/* Text Content Container */}
+        <div className="flex-1 lg:flex-1 text-center p-4 md:p-6 lg:text-left lg:pl-12">
+          <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6">
+            Learn &amp; Earn
+          </h1>
+          <div className="space-y-2 lg:space-y-3 mb-6 lg:mb-8">
+            <p className="text-lg lg:text-xl">Curious About It?</p>
+            <p className="text-lg lg:text-xl">Don’t worry! Fill out this form</p>
+            <p className="text-lg lg:text-xl">And unlock all the answers you’ve</p>
+            <p className="text-lg lg:text-xl">been waiting for.</p>
+          </div>
+          <a href="#" className="inline-block bg-blue-600 text-white 
+            py-2 px-6 lg:py-3 lg:px-8 rounded-full text-lg lg:text-xl
+            hover:bg-blue-700 transition-colors duration-300">
             View Form
           </a>
         </div>
       </div>
-    );
-  };
-  export default LearnAndEarn;
+    </div>
+  );
+};
+
+export default LearnAndEarn;

@@ -48,9 +48,9 @@ const courses = [
 ];
 
 const CourseCard = ({ duration, title, imgSrc }) => (
-  <div className="relative flex flex-col items-center p-4 pt-5 border hover:shadow-lg transition-shadow
+  <div className="relative flex flex-col items-center p-4 pt-4 border hover:shadow-lg transition-shadow
     border-[#A9A9A9] rounded-[16px] overflow-hidden
-    w-[111.23px] h-[94.11px]
+    w-[95.23px] h-[85.11px]
     md:w-[128.06px] md:h-[108.36px]
     lg:w-[169px] lg:h-[145px]">
     
@@ -79,22 +79,22 @@ const CourseCard = ({ duration, title, imgSrc }) => (
     />
 
     {/* Course Title */}
-    <h3 className="text-center font-poppins font-medium text-[#3D3D3D] mb-1
-      text-[9px] leading-[14px] line-clamp-2
-      
-      
+    <h3 className="text-center font-poppins font-medium text-[#3D3D3D] 
+      text-[9px] leading-[14px] 
+      mt-auto
+      md:pt-2
       lg:pt-3
       lg:text-[14px] lg:leading-[20px]">
       {title}
     </h3>
 
     {/* View Button */}
-    <div className="w-full flex items-center justify-center mt-auto ">
+    <div className="w-full flex items-center justify-center  mt-auto">
       <button className="font-poppins font-medium bg-[#0056D2] text-white 
-        hover:bg-blue-700 transition-colors rounded-[25px]
-        w-[46.07px] h-[18.43px] text-[10px]  leading-[1]
-        md:w-[53.02px] md:h-[21.15px] md:text-[12px] 
-        lg:w-[70px] lg:h-[28px] ">
+        hover:bg-blue-700 transition-colors rounded-[25px] 
+        w-[46.07px] h-[18.43px] text-[10px]
+        md:w-[53.02px] md:h-[21.15px] md:text-[12px] md:top-3
+        lg:w-[70px] lg:h-[28px lg:top-0 ">
         View
       </button>
     </div>

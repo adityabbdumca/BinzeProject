@@ -50,7 +50,7 @@ const courses = [
 const CourseCard = ({ duration, title, imgSrc }) => (
   <div className="relative flex flex-col items-center p-4 pt-4 border hover:shadow-lg transition-shadow
     border-[#A9A9A9] rounded-[16px] overflow-hidden
-    w-[95.23px] h-[85.11px]
+    w-[100.23px] h-[88.11px]
     md:w-[128.06px] md:h-[108.36px]
     lg:w-[169px] lg:h-[145px]">
     
@@ -71,17 +71,17 @@ const CourseCard = ({ duration, title, imgSrc }) => (
     <img 
       src={imgSrc} 
       alt={`${title} course`} 
-      className="object-contain mt-1
+      className="object-contain 
         h-[20.4px] w-[20.4px]
-        md:h-[23.49px] md:w-[23.49px]
-        lg:h-[31px] lg:w-[31px]"
+        md:h-[23.49px] md:w-[23.49px] md:mt-1
+        lg:h-[31px] lg:w-[31px] lg:mt-1" 
       loading="lazy"
     />
 
     {/* Course Title */}
     <h3 className="text-center font-poppins font-medium text-[#3D3D3D] 
       text-[9px] leading-[14px] 
-      mt-auto
+      pt-1
       md:pt-2
       lg:pt-3
       lg:text-[14px] lg:leading-[20px]">
@@ -89,7 +89,7 @@ const CourseCard = ({ duration, title, imgSrc }) => (
     </h3>
 
     {/* View Button */}
-    <div className="w-full flex items-center justify-center  mt-auto">
+    <div className="w-full flex items-center justify-center  lg:pt-0 md:pt-0 mt-1">
       <button className="font-poppins font-medium bg-[#0056D2] text-white 
         hover:bg-blue-700 transition-colors rounded-[25px] 
         w-[46.07px] h-[18.43px] text-[10px]
@@ -200,7 +200,7 @@ useEffect(() => {
 
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 pr-[1%]  lg:gap-6 md:gap-5 gap-8 md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 pr-[1%]  lg:gap-6 md:gap-5 gap-4 md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course) => (
               <CourseCard key={course.id} {...course} />

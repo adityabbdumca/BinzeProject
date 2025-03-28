@@ -200,7 +200,7 @@ useEffect(() => {
 
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7   lg:gap-6 md:gap-5 gap-9 mr-2 pl-[1%] pr-[3%] ">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7   lg:gap-6 md:gap-5 gap-11  md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course) => (
               <CourseCard key={course.id} {...course} />

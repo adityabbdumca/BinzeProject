@@ -10,6 +10,11 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         mulish: ['Mulish', 'sans-serif']
       },
+      spacing: {
+        '120px': '120px',
+        '140px': '140px',
+        '180px': '180px'
+      }
     },
   },
   plugins: [],

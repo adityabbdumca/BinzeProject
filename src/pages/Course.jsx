@@ -71,7 +71,7 @@ const CourseCard = ({ duration, title, imgSrc }) => (
     <img 
       src={imgSrc} 
       alt={`${title} course`} 
-      className="object-contain mb-1
+      className="object-contain mt-1
         h-[20.4px] w-[20.4px]
         md:h-[23.49px] md:w-[23.49px]
         lg:h-[31px] lg:w-[31px]"
@@ -82,7 +82,7 @@ const CourseCard = ({ duration, title, imgSrc }) => (
     <h3 className="text-center font-poppins font-medium text-[#3D3D3D] mb-1
       text-[9px] leading-[14px] line-clamp-2
       
-      md:pt-1
+      
       lg:pt-3
       lg:text-[14px] lg:leading-[20px]">
       {title}
@@ -200,7 +200,7 @@ useEffect(() => {
 
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7   lg:gap-6 md:gap-5 gap-11  md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 pr-[1%]  lg:gap-6 md:gap-5 gap-8 md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course) => (
               <CourseCard key={course.id} {...course} />

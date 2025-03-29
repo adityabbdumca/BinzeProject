@@ -1,37 +1,39 @@
 import React from 'react';
-import succesStoryDesctop from "../assets/image/succesStoryDesctop.png";
-import successStoryTab from "../assets/image/successStoryTab.png";
-import suceDesk from "../assets/image/suceDesk.png"
- // Add mobile image import
+import successStoryDesktop from "../assets/image/succesStoryDesctop.png";
+import successStoryTablet from "../assets/image/successStoryTab.png";
+
 
 const SuccessStories = () => {
   return (
-    <div className="py-8">
-      {/* Desktop Image - shows only on xl screens */}
-      <div className="hidden xl:block w-full h-[744px] mx-auto">
-  <img 
-    src={suceDesk} 
-    alt="Desktop success stories"
-    className="w-[1640px] h-[744px] object-cover" 
-  />
-</div>
+    <div className="py-8  lg:h-[744px]">
+      {/* Responsive Image Container */}
+      <div className="mx-auto">
+        {/* Desktop Image */}
+        <div className="hidden xl:block">
+          <img 
+            src={successStoryDesktop} 
+            alt="Desktop success stories"
+            className="w-full max-w-screen-2xl h-auto object-contain mx-auto"
+          />
+        </div>
 
-      {/* Tablet Image - shows only on md/lg screens */}
-      <div className="hidden md:block lg:block xl:hidden">
-        <img 
-          src={successStoryTab} 
-          alt="Success stories tablet version"
-          className="mx-auto w-[1033px] h-[422px]  object-cover"
-        />
-      </div>
+        {/* Tablet Image */}
+        <div className="hidden md:block xl:hidden">
+          <img 
+            src={successStoryTablet} 
+            alt="Success stories tablet version"
+            className="w-full max-w-6xl h-auto object-contain mx-auto"
+          />
+        </div>
 
-      {/* Mobile Image - shows only on small screens */}
-      <div className="block md:hidden">
-        <img 
-          src={successStoryTab} // Make sure to import mobile image
-          alt="Success stories mobile version"
-          className="mx-auto w-[355px] h-[240px] object-cover rounded-lg shadow-sm"
-        />
+        {/* Mobile Image */}
+        <div className="block md:hidden">
+          <img 
+            src={successStoryTablet}
+            alt="Success stories mobile version"
+            className="w-full max-w-md h-auto object-contain mx-auto rounded-lg shadow-sm"
+          />
+        </div>
       </div>
     </div>
   );

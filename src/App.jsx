@@ -22,6 +22,7 @@ import LogPage from './pages/LogPage'
 import WeAreConsultig from './pages/WeAreConsultig'
 import FooterNav from './pages/FooterNav'
 import Course2 from './pages/Course2'
+import ReadyToUp from './pages/ReadyToUp'
 const App = () => {
 
     return (
@@ -52,6 +53,7 @@ const App = () => {
                   <CarrerTran />
                   <WeaningNews />
                   <SuccessStories />
+                  <ReadyToUp></ReadyToUp>
                   <FreAskQuestion />
                 </>
               } />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
+// ... keep all image imports the same
 import course1 from "../assets/image/course1.png";
 import course2 from "../assets/image/course2.png";
 import course3 from "../assets/image/course3.png";
@@ -13,10 +14,10 @@ import course10 from "../assets/image/course10.png";
 import course11 from "../assets/image/course11.png";
 import course12 from "../assets/image/course12.png";
 
-// ... keep other course imports as they are
+
 
 const courses = [
-  { id: 1, duration: "2 Years", title: "MBA", imgSrc: course1, category: "PG" },
+  { id: 1, duration: "2 Years", title: "MBA Online", imgSrc: course1, category: "PG" },
   
   { id: 2, duration: "2 Years", title: "MBA", imgSrc: course2, category: "PG" },
   { id: 3, duration: "2 Years", title: "MBA", imgSrc: course3, category: "PG" },
@@ -48,11 +49,12 @@ const courses = [
 ];
 
 const CourseCard = ({ duration, title, imgSrc }) => (
-  <div className="relative flex flex-col items-center p-4 pt-4 border hover:shadow-lg transition-shadow
+  <div className="relative flex flex-col items-center p-4  border hover:shadow-lg transition-shadow
     border-[#A9A9A9] rounded-[16px] overflow-hidden
     w-[100.23px] h-[88.11px]
     md:w-[128.06px] md:h-[108.36px]
-    lg:w-[169px] lg:h-[145px]">
+    lg:w-[169px] lg:h-[145px]
+    mx-auto"> {/* Added mx-auto for centering */}
     
     {/* Duration Badge */}
     <div className="absolute top-0 right-0 flex items-center justify-center bg-[#FF6E00]
@@ -83,31 +85,32 @@ const CourseCard = ({ duration, title, imgSrc }) => (
       text-[9px] leading-[14px] 
       pt-1
       md:pt-2
-      lg:pt-3
+      lg:pt-4
       lg:text-[14px] lg:leading-[20px]">
       {title}
     </h3>
 
     {/* View Button */}
-    <div className="w-full flex items-center justify-center  lg:pt-0 md:pt-0 mt-1">
+    <div className="w-full flex items-center justify-center lg:pt-3 md:pt-0 mt-1">
       <button className="font-poppins font-medium bg-[#0056D2] text-white 
         hover:bg-blue-700 transition-colors rounded-[25px] 
         w-[46.07px] h-[18.43px] text-[10px]
-        md:w-[53.02px] md:h-[21.15px] md:text-[12px] md:top-3
-        lg:w-[70px] lg:h-[28px lg:top-0 ">
+        md:w-[53.02px] md:h-[21.15px] md:text-[12px]
+        lg:w-[70px] lg:h-[28px]">
         View
       </button>
     </div>
   </div>
 );
-
 CourseCard.propTypes = {
   duration: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
 };
+// ... keep proptypes same
 
 const Courses = () => {
+  // ... keep all state and effect hooks same
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
   const [displayCount, setDisplayCount] = useState(21);
@@ -146,29 +149,32 @@ useEffect(() => {
   const displayedCourses = showAll ? filteredCourses : filteredCourses.slice(0, displayCount);
 
   return (
-    <div className="bg-white text-gray-800 py-[2%] lg:pl-[5%] top-[20px] lg:h-[803px] lg:w-[1441px]">
+    <div className="bg-white text-gray-800 py-[2%] lg:pl-[5%] top-[20px] 
+      lg:min-h-[803px] w-full max-w-[1440px] mx-auto"> {/* Made container responsive */}
       <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-center">
-  <h1 className="w-[579px] h-[40px] font-poppins font-extrabold text-[28px] leading-[40px] text-center">
-    Courses
-  </h1>
-</div>
-{/* Mobile version */}
-<div className="flex justify-center items-center md:hidden">
-  <p className="w-[328px] text-[#6D6D6D] font-poppins font-medium text-[8px] leading-[24px] tracking-normal ">
-    In-demand courses across multiple domains. Top-rated courses in diverse.
-  </p>
-</div>
+        {/* Header Section */}
+        <div className="flex justify-center">
+          <h1 className="w-[579px] h-[40px] font-poppins font-extrabold text-[28px] leading-[40px] text-center">
+            Courses
+          </h1>
+        </div>
 
-{/* Tablet/Desktop version */}
-<div className="hidden md:flex justify-center ">
-  <p className="w-[735px] h-[24px] text-[#6D6D6D] font-poppins md:ml-3 font-medium text-[18px] leading-[24px] tracking-normal">
-    In-demand courses across multiple domains. Top-rated courses in diverse.
-  </p>
-</div>
+        {/* Description */}
+        <div className="flex justify-center items-center md:hidden">
+          <p className="w-[328px] text-[#6D6D6D] font-poppins font-medium text-[8px] pt-3 leading-[24px] tracking-normal">
+            In-demand courses across multiple domains. Top-rated courses in diverse.
+          </p>
+        </div>
 
+        <div className="hidden md:flex justify-center">
+          <p className="w-[735px] h-[24px] text-[#6D6D6D] font-poppins md:ml-3  pt-3 font-medium text-[18px] leading-[24px] tracking-normal">
+            In-demand courses across multiple domains. Top-rated courses in diverse.
+          </p>
+        </div>
 
-        {/* Enhanced Filter Buttons */}
+        {/* Filter Buttons */}
+    
+        
         <div className="overflow-x-auto lg:mt-7 pb-6 scrollbar-hide   ">
   <div className="flex space-x-4 min-w-max px-2 lg:ml-10">
     <div className="border-b-2 ">
@@ -198,9 +204,10 @@ useEffect(() => {
 </div>
 
 
-
-        {/* Courses Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 pr-[1%]  lg:gap-6 md:gap-5 gap-4 md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]  ">
+        {/* Courses Grid (Keep original grid structure) */}
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 
+          pr-[1%] lg:gap-6 md:gap-5 gap-4 
+          md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course) => (
               <CourseCard key={course.id} {...course} />

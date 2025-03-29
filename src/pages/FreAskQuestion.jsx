@@ -12,16 +12,22 @@ const FreqAskQuestion = () => {
   ];
 
   return (
-    <div className="bg-gray-100 font-poppins py-16 px-4 md:px-8 lg:px-16">
+    <div className="bg-white font-poppins py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-blue-500 text-lg md:text-xl mb-2">
             FAQs
           </h2>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-gray-600 md:text-lg max-w-2xl mx-auto">
+          <h1 className="font-poppins font-normal text-center capitalize text-[#141414] 
+    w-[252px] h-[47px] text-[18px] leading-[58px]
+    md:w-[768px] md:h-[58px] md:text-[48px]
+    mx-auto">
+  Frequently Asked Questions
+</h1>
+          <p className="font-poppins font-normal text-center text-[#1E1E1E] 
+    w-[313px] h-[32px] text-[10px] leading-[16px]
+    md:w-[572px] md:h-[52px] md:text-[16px] md:leading-[26px] pt-4
+    mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
         </div>

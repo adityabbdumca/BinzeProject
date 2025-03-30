@@ -56,7 +56,7 @@ const CarrerTran = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white w-full">
       <div className="container mx-auto py-12 px-1 lg:px-1">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
           1 Lakh+ Career Transformations
@@ -95,8 +95,8 @@ const CarrerTran = () => {
           </div>
         </div>
         {/* // second line */}
-        <div className=" mt-4 overflow-x-hidden relative">
-          <div className="flex animate-scroll">
+        <div className=" mt-4 overflow-x-hidden relative ">
+          <div className="flex animate-scroll ">
             {duplicatedEmLoy.reverse().map((story, index) => (
               <div 
                 key={`${index}-${story.image}`}

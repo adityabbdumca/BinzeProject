@@ -175,7 +175,7 @@ useEffect(() => {
         {/* Filter Buttons */}
     
         
-        <div className="overflow-x-auto lg:mt-7 pb-6 scrollbar-hide   ">
+        <div className="overflow-x-auto lg:mt-7 pb-6 scrollbar-hide md:pt-3  ">
   <div className="flex space-x-4 min-w-max px-2 lg:ml-10">
     <div className="border-b-2 ">
     {categories.map(category => (

@@ -6,20 +6,20 @@ import rightButtonMentor from "../assets/image/rightButtonMentor.png"
 import leftButtonMentor from "../assets/image/leftButtonMentor.png"
 const Mentor = () => {
   return (
-    <div className='bg-[#F3F7FF]'>
+    <div className='flex justify-center items-center bg-[#F3F7FF] w-full '>
       {/* Desktop-only image (lg breakpoint and above) */}
-      <img 
-        src={mento1} 
-        alt="Desktop mentor"
-        className="hidden lg:block lg:pl-6" 
-      />
+
       
+     {/* <div className='lg:w-full lg:h-[741px] md:w-full md:h-[569px]  lg:pl-4'>
+     <img src={mento1} alt="" />
+      
+     </div>
+       */}
       {/* Tablet-only image (md to lg breakpoint) */}
-      <img 
-        src={mento2} 
-        alt="Tablet mentor"
-        className="hidden md:block lg:hidden" 
-      />
+      
+     
+      
+   
       {/* // mobile screen */}
 
       <div className='md:hidden w-[300px] h-[472px] bg-[#F3F7FF] p-4 mx-auto'>

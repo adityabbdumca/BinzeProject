@@ -58,11 +58,16 @@ const CarrerTran = () => {
   return (
     <div className="bg-gray-900 text-white w-full">
       <div className="container mx-auto py-12 px-1 lg:px-1">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
-          1 Lakh+ Career Transformations
-        </h1>
+      <h1 className="text-[#F1F1F1] font-poppins font-semibold text-center 
+              mx-auto leading-[40px]
+              text-[18px] 
+              sm:text-[24px] 
+              lg:text-[32px]">
+  1 Lakh+ Career Transformations
+</h1>
+
         <p className="text-center mb-8 text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-          These are some gems of College Drishti hired by leading companies
+          These are some gems of College Drishti are hired by some leading companies
         </p>
 
         {/* Single carousel section */}
@@ -77,15 +82,17 @@ const CarrerTran = () => {
                 <div className="relative flex flex-col items-center">
                   <div className="mb-2 sm:mb-4">
                     <img
-                      alt="Profile"
-                      className="rounded-full w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover hover:scale-105 transition-transform"
-                      src={story.image}
-                    />
+  alt="Profile"
+  className="rounded-full w-[68px] h-[68px] object-cover hover:scale-105 transition-transform 
+           md:w-[87px] md:h-[87px] 
+           lg:w-[108px] lg:h-[108px]"
+  src={story.image}
+/>
                   </div>
-                  <div className="bg-white w-16 h-8 sm:w-24 sm:h-10 rounded-lg flex justify-center items-center p-1">
+                  <div className="bg-white   w-[74px] h-[24px] -mt-[25%] md:w-[96px] md:h-[28px] md:-mt-[27%]   lg:w-[128px] lg:h-[37px] lg:-mt-[24%] rounded-lg flex justify-center items-center p-1">
                     <img
                       alt="Company logo"
-                      className="w-12 h-3 sm:w-16 sm:h-5 object-contain"
+                      className="w-[38px] h-[11px] md:w-[50px] md:h-[15px] lg:w-[68px] lg:h-[21px]  object-contain"
                       src={story.company}
                     />
                   </div>
@@ -106,15 +113,17 @@ const CarrerTran = () => {
                 <div className="relative flex flex-col items-center">
                   <div className="mb-2 sm:mb-4">
                     <img
-                      alt="Profile"
-                      className="rounded-full w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover hover:scale-105 transition-transform"
-                      src={story.image}
-                    />
+  alt="Profile"
+  className="rounded-full w-[68px] h-[68px] object-cover hover:scale-105 transition-transform 
+           md:w-[87px] md:h-[87px] 
+           lg:w-[108px] lg:h-[108px]"
+  src={story.image}
+/>
                   </div>
-                  <div className="bg-white w-16 h-8 sm:w-24 sm:h-10 rounded-lg flex justify-center items-center p-1">
+                  <div className="bg-white   w-[74px] h-[24px] -mt-[25%] md:w-[96px] md:h-[28px] md:-mt-[27%]   lg:w-[128px] lg:h-[37px] lg:-mt-[24%] rounded-lg flex justify-center items-center p-1">
                     <img
                       alt="Company logo"
-                      className="w-12 h-3 sm:w-16 sm:h-5 object-contain"
+                      className="w-[38px] h-[11px] md:w-[50px] md:h-[15px] lg:w-[68px] lg:h-[21px]  object-contain"
                       src={story.company}
                     />
                   </div>

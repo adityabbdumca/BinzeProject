@@ -92,7 +92,7 @@ const Registration = () => {
   }, [submitSuccess]);
 
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center justify-center p-4 sm:p-6 font-poppins">
+    <div className="lg:h[770px] bg-gray-900 min-m-screen  flex items-center justify-center p-4 sm:p-6 font-poppins">
       <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-6xl relative">
         {submitSuccess && (
           <div className="absolute inset-0 bg-green-50/90 flex items-center justify-center rounded-2xl">

@@ -206,18 +206,20 @@ useEffect(() => {
 
         {/* Courses Grid (Keep original grid structure) */}
         <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 
-          pr-[1%] lg:gap-6 md:gap-5 gap-4 
-          md:pl-[3%] md:pr-[3%] lg:pl-[3%] lg:pr-[3%]">
-          {displayedCourses.length > 0 ? (
-            displayedCourses.map((course) => (
-              <CourseCard key={course.id} {...course} />
-            ))
-          ) : (
-            <p className="font-poppins text-center col-span-full text-gray-500 py-8">
-              No courses found in {selectedCategory.toLowerCase()} category.
-            </p>
-          )}
-        </div>
+           gap-2 md:gap-4 lg:gap-6
+           px-4 md:px-6 lg:px-8
+           mx-auto max-w-screen-2xl w-full">
+  {displayedCourses.length > 0 ? (
+    displayedCourses.map((course) => (
+      <CourseCard key={course.id} {...course} />
+    ))
+  ) : (
+    <p className="font-poppins text-center col-span-full text-gray-500 
+       py-10 md:py-12 text-base md:text-lg">
+      No courses found in {selectedCategory.toLowerCase()} category.
+    </p>
+  )}
+</div>
 
         {/* View All Button */}
         {!showAll && filteredCourses.length > displayCount && (

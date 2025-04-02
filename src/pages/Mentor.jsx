@@ -22,11 +22,11 @@ const Mentor = () => {
    
       {/* // mobile screen */}
 
-      <div className='md:hidden w-[300px] h-[472px] bg-[#F3F7FF] p-4 mx-auto'>
-  <div className='flex justify-center items-center w-full h-[44px] mb-4'>  
+      <div className='md:hidden w-[300px] h-[400px] bg-[#F3F7FF] p-4 mx-auto'>
+  <div className='flex justify-center items-center w-full h-[44px] mb-3'>  
     <p className='font-poppins font-semibold text-[18px]'>Pick your Mentor</p>
   </div>
-  <div className='w-full h-[28px] mb-6'> 
+  <div className='w-full h-[28px] mb-5'> 
     <p className='font-poppins font-normal text-[8px] leading-[14px] text-center'>
       College Drishti has a team of expert counsellors ready to guide you through their experience of guiding 100s of students
     </p>

@@ -23,6 +23,7 @@ import WeAreConsultig from './pages/WeAreConsultig'
 import FooterNav from './pages/FooterNav'
 import Course2 from './pages/Course2'
 import ReadyToUp from './pages/ReadyToUp'
+import Course3 from './pages/Course3'
 const App = () => {
 
     return (
@@ -37,7 +38,7 @@ const App = () => {
               <Route path="/registation" element={<Registration />} />
               <Route path="/login" element={<LogPage></LogPage>} />
               <Route path="/university1" element={<Course2></Course2>} />
-              <Route path="/course" element={<Courses></Courses>} />
+              <Route path="/course" element={<Course3></Course3>} />
               <Route path="/" element={
                 <>
                   <Banner/>

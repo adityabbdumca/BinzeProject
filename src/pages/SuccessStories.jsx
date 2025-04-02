@@ -1,7 +1,7 @@
 import React from 'react';
 import successStoryDesktop from "../assets/image/succesStoryDesctop.png";
 import successStoryTablet from "../assets/image/successStoryTab.png";
-
+import sucsesStoryMobile from "../assets/image/sucsesStoryMobile.png";
 
 const SuccessStories = () => {
   return (
@@ -27,13 +27,14 @@ const SuccessStories = () => {
         </div>
 
         {/* Mobile Image */}
-        <div className="block md:hidden">
-          <img 
-            src={successStoryTablet}
-            alt="Success stories mobile version"
-            className="w-full max-w-md h-auto object-contain mx-auto rounded-lg shadow-sm"
-          />
-        </div>
+        <div className="block md:hidden w-full h-[220px]  ">
+  <img 
+    src={sucsesStoryMobile}
+    alt="Success stories mobile version"
+    className="mx-auto rounded-lg shadow-sm"
+  />
+</div>
+
       </div>
     </div>
   );

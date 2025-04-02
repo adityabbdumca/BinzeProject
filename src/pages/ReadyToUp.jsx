@@ -5,7 +5,7 @@ const ReadyToUp = () => {
     <div className="bg-[#D3E9FF] rounded-[20px] mx-auto lg:mt-[8%]
       lg:max-w-[1320px] lg:min-h-[295px] 
       md:max-w-[704px] md:min-h-[187px] 
-      max-w-[361px] min-h-[96px] 
+      max-w-[361px] h-[96px] 
       
       relative overflow-hidden px-4 py-6 md:p-8
       flex flex-col items-center justify-center
